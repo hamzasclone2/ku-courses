@@ -10,16 +10,16 @@ Link to playable Project: https://people.eecs.ku.edu/~h002h741/assets/views/Prac
 My part of the final project - An educational basketball game
 
 Start:
-![Start Pic](/images/1.png)
+![Start Pic](/EECS-368/images/1.png)
 
 Drag the ball to the correct answer:
-![Dragging Pic](/images/2.png)
+![Dragging Pic](/EECS-368/images/2.png)
 
 Correct answer:
-![Correct Pic](/images/3.png)
+![Correct Pic](/EECS-368/images/3.png)
 
 Wrong answer:
-![Wrong Pic](/images/4.png)
+![Wrong Pic](/EECS-368/images/4.png)
 
 Final Score:
-![Final Score Pic](/images/5.png)
+![Final Score Pic](/EECS-368/images/5.png)
