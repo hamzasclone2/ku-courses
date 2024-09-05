@@ -1,0 +1,21 @@
+﻿Hamza Hameed
+EECS 690
+Prof. Miller
+3/30/18
+
+Project 2 Report
+
+The way that I made my project work is like this:
+
+1. Rank 0 sends rgb values of each image to each rank using Isend. This is because Rank 0 does not need to make sure that any of the other processes have received their data in order to begin working on its own data.
+
+2. After receiving their data, each rank (including Rank 0), calculates the percentages of its values.
+
+3. Then an Allgather is used so each process receives all of the info of each other process into one buffer. Each rank waits until it receives all the data. 
+
+4. Then each rank compares its values to the rest of the ranks, and determines which image it is most similar to.
+
+5. Then all the ranks use a Gather to get their info back to just Rank 0. This is because only Rank 0 will be outputting. Rank 0 waits until it has received all the values.
+
+6. Rank 0 outputs the final answers to the console, after receiving all the values. 
+

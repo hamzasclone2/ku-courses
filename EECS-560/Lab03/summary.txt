@@ -1,0 +1,10 @@
+To run the file with data from text files run it like this:
+./Lab03 data2.txt
+
+Observations:
+
+For the most part, if an insertion fails, it fails with both hash tables.
+One exception is values that are a multiple of the table size (53, 106, etc)
+Sometimes these will fail on both, other times they only fail on the quadratic
+probing table. In general, the double hashing table is more successful at
+inserting values

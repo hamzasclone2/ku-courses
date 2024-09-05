@@ -1,0 +1,76 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class matrixTest1 {
+
+	@Test
+	public void testDeterminant() {
+		double[][] matrix = new double[3][3];
+		
+		matrix[0][0] = 5;
+		matrix[0][1] = 4;
+		matrix[0][2] = 3;
+		matrix[1][0] = 6;
+		matrix[1][1] = 9;
+		matrix[1][2] = 1;
+		matrix[2][0] = 2;
+		matrix[2][1] = 5;
+		matrix[2][2] = 3;
+		
+		assertEquals(82.0,Matrix.determinant(3, matrix), 0.01);
+	}
+	
+	@Test
+	public void testSubMatrix(){
+		double[][] matrix = new double[3][3];
+		double[][] sub = new double[2][2];
+		
+		matrix[0][0] = 1;
+		matrix[0][1] = 2;
+		matrix[0][2] = 3;
+		matrix[1][0] = 4;
+		matrix[1][1] = 5;
+		matrix[1][2] = 6;
+		matrix[2][0] = 7;
+		matrix[2][1] = 8;
+		matrix[2][2] = 9;
+		
+		sub[0][0] = 5;
+		sub[0][1] = 6;
+		sub[1][0] = 8;
+		sub[1][1] = 9;
+		
+		assertArrayEquals(sub, Matrix.subMatrix(3, 0, 0, matrix));
+	}
+	
+	@Test
+	public void testInverse(){
+		double[][] matrix = new double[3][3];
+		double[][] inv = new double[3][3];
+		
+		matrix[0][0] = 0;
+		matrix[0][1] = 0;
+		matrix[0][2] = 1;
+		matrix[1][0] = 1;
+		matrix[1][1] = 0;
+		matrix[1][2] = 1;
+		matrix[2][0] = 0;
+		matrix[2][1] = 1;
+		matrix[2][2] = 1;
+		
+		inv[0][0] = -1;
+		inv[0][1] = 1;
+		inv[0][2] = 0;
+		inv[1][0] = -1;
+		inv[1][1] = 0;
+		inv[1][2] = 1;
+		inv[2][0] = 1;
+		inv[2][1] = -0.0; //test was saying that it was expecting -0.0 here so I had to change it to that
+		inv[2][2] = 0;
+		
+		assertArrayEquals(inv, Matrix.inverse(3, matrix));
+	}
+
+}
